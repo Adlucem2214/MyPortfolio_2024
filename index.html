@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | UI/UX Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js" defer></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md">
+      <div class="container mx-auto px-6 py-4">
+          <div class="flex items-center justify-between">
+              <!-- Logo -->
+              <a href="#" class="text-2xl font-bold gradient-text">Portfolio</a>
+  
+              <!-- Hamburger Menu Button -->
+              <div id="menu-toggle" class="md:hidden flex flex-col gap-1 cursor-pointer">
+                  <span class="block w-6 h-0.5 bg-white transition-all"></span>
+                  <span class="block w-6 h-0.5 bg-white transition-all"></span>
+                  <span class="block w-6 h-0.5 bg-white transition-all"></span>
+              </div>
+  
+              <!-- Navigation Links -->
+              <div id="menu" class="hidden md:flex md:space-x-8 absolute md:static top-14 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent md:flex-row flex-col shadow-md md:shadow-none rounded-md">
+                  <a href="#home" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">Home</a>
+                  <a href="#projects" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">Projects</a>
+                  <a href="#about" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">About</a>
+                  <a href="#contact" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">Contact</a>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+    <main class="mx-16">
+          <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center bg-gray-900 mx-12">
+      <div class="container mx-auto px-6 py-20">
+          <div class="flex flex-col md:flex-row items-center">
+              <div class="md:w-1/2" data-aos="fade-right">
+                  <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                      Hi, I'm <span class="gradient-text">Sifen</span>
+                  </h1>
+                  <p class="text-xl md:text-2xl mb-8 text-gray-400">
+                       Frontend & Mobile Developer
+                  </p>
+                  <a href="#contact">
+                    <button class="gradient-border px-8 py-3 rounded-full hover:opacity-90" >
+                      Get in touch
+                   </button>
+                  </a>
+              </div>
+              <div class="md:w-1/2 mt-12 md:mt-0" data-aos="fade-left">
+                  <div class="p-2 rounded-lg">
+                      <img src="image/hero_1.svg" alt="Hero Image" class="rounded-lg w-3/4 mx-auto">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+    <!-- About Section -->
+    <section class="py-20 px-8">
+      <div class="container text-center mx-auto" data-aos="fade-up">
+        <h1 class="text-4xl font-bold mb-10 text-white">What can I do for you?</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
+              <img src="icons/design.png" alt="Website Design" />
+            </div>
+            <h3 class="text-xl font-semibold mb-2 gradient-text">Website Design</h3>
+            <p class="text-sm text-gray-400">Creating visually appealing and user-friendly website designs tailored to your brand and audience, ensuring an engaging online presence.</p>
+          </div>
+          
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
+              <img src="icons/app.png" alt="App Design" />
+            </div>
+            <h3 class="text-xl font-semibold mb-2 gradient-text">App Design and Development</h3>
+            <p class="text-sm text-gray-400">Designing and building responsive, intuitive, and functional applications for various platforms to meet your business and user needs.</p>
+          </div>
+          
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
+              <img src="icons/website.png" alt="Web Development" />
+            </div>
+            <h3 class="text-xl font-semibold mb-2 gradient-text">Web Development</h3>
+            <p class="text-sm text-gray-400">Building robust, scalable, and high-performance websites using the latest technologies to bring your ideas to life.</p>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="py-16">
+        <div class="container mx-auto text-center">
+          <h1 class="text-4xl font-bold mb-10 text-white">Skills</h1>
+          <div class="flex flex-wrap justify-center items-center space-x-4 space-y-4">
+            
+            <div class="w-20 h-20 animate-icon mr-4">
+              <img src="icons/figma.png" alt="Figma">
+            </div>
+            
+            <div class="w-20 h-20 animate-icon mr-4">
+              <img src="icons/html.png" alt="HTML">
+            </div>
+            
+            <div class="w-20 h-20 animate-icon mr-4">
+              <img src="icons/css.png" alt="CSS">
+            </div>
+            
+            <div class="w-20 h-20 animate-icon mr-4">
+              <img src="icons/js.png" alt="JavaScript">
+            </div>
+            
+            <div class="w-20 h-20 animate-icon mr-4">
+              <img src="icons/bootstrap.png" alt="Bootstrap">
+            </div>
+           
+            <div class="w-20 h-20 animate-icon mr-4">
+              <img src="icons/flutter.png" alt="Flutter">
+            </div>
+            
+            <div class="w-20 h-20 animate-icon mr-4">
+              <img src="icons/tailwind.png" alt="Tailwind">
+            </div>
+          </div>
+        </div>
+      </section>
+
+         <!-- Container -->
+         <section id="projects">
+          <div class="container mx-auto py-10 px-4 lg:px-20" >
+
+            <h1 class="text-4xl font-bold mb-10 text-white text-center">Projects</h1>
+            
+            <div class="mt-12">
+                <h2 class="text-3xl font-bold mb-10 text-white text-left ">Frontend</h2>
+            </div>
+          
+            <!-- Project 1 -->
+            <div class="flex flex-col-reverse lg:flex-row items-center mb-20">
+              <!-- Left Content -->
+              <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">StockMinder</h2>
+                <p class="text-lg leading-relaxed mb-4 pr-4">
+                  StockMinder is a comprehensive inventory management solution that enables businesses to efficiently monitor stock levels and provides timely notifications when items are low, ensuring seamless operations and optimal inventory control.
+                </p>
+                <p class="text-sm text-gray-400 mb-4"><strong>Role:</strong> Frontend Developer - Designed and implemented the user interface using modern web technologies.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Inventory</span>
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Low Stock Alerts</span>
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Business</span>
+                </div>
+                <a href="https://github.com/Adlucem2214/FSW-frontend" target="_blank">
+                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
+                    View on GitHub
+                  </button>
+                </a>
+              </div>
+              <!-- Right Desktop Mockup -->
+              <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-full lg:w-[500px] h-80 bg-gray-800 rounded-lg shadow-lg gradient-border">
+                  <!-- Desktop Image -->
+                  <img src="image/stkmock.png" alt="Desktop Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="flex flex-col lg:flex-row items-center mb-20">
+              <!-- Left Desktop Mockup -->
+              <div 
+                class="w-full lg:w-1/2 flex justify-center pr-4" 
+                data-aos="fade-right" 
+                data-aos-duration="1000"
+              >
+                <div class="relative w-full lg:w-[500px] h-80 bg-gray-800 rounded-lg shadow-lg gradient-border mr-4">
+                  <!-- Desktop Image -->
+                  <img src="image/kendilwebmock.jpeg" alt="Desktop Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+                </div>
+              </div>
+              <!-- Right Content -->
+              <div 
+                class="w-full lg:w-1/2 text-center lg:text-left pl-8" 
+                data-aos="fade-left" 
+                data-aos-duration="1000"
+              >
+                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">KendilPharma Website</h2>
+                <p class="text-lg leading-relaxed">
+                  Kendil Pharma is a web platform that allows pharmacists to upload and manage medicine inventories while enabling clients to browse and access available medicines. It simplifies inventory management, enhances accessibility, and ensures a seamless experience for both pharmacists and customers.
+                </p>
+                <p class="text-sm text-gray-400 mb-4 mt-4"><strong>Role:</strong> Full-Stack Developer - Developed the frontend and integrated the backend using modern frameworks and technologies.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Health Tech</span>
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Pharmaceutical Solutions</span>
+                </div>
+                <a href="https://github.com/SamrawitDawit/Kendil-Pharma" target="_blank">
+                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
+                    View on GitHub
+                  </button>
+                </a>
+              </div>
+            </div>
+            
+            <h2 class="text-3xl font-bold mt-12 pt-8 mb-20 text-white text-left ">Mobile Development Projects</h2>
+            
+            <!-- Project 3 -->
+            <div class="flex flex-col-reverse lg:flex-row items-center mb-10 gap-6 lg:gap-4">
+              <!-- Left Content -->
+              <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">Flavchemy Recipe Sharing App</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                  Flavchemy is a Flutter-based app that allows users to discover, share, and save recipes. It features a user-friendly interface, easy navigation, and functionalities like recipe categorization, favorites, and search.
+                </p>
+                <p class="text-sm text-gray-400 mb-4"><strong>Role:</strong> App Developer - Designed and implemented the app interface and logic using Flutter.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Flutter</span>
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Recipe</span>
+                </div>
+                <a href="https://github.com/Adlucem2214/Project4/tree/add_new_recipe" target="_blank">
+                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
+                    View on GitHub
+                  </button>
+                </a>
+              </div>
+              <!-- Right Desktop Mockup -->
+              <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-72 h-96 lg:w-80 lg:h-[30rem] bg-gray-800 rounded-xl shadow-lg gradient-border">
+                  <!-- Placeholder for Mobile Image -->
+                  <img src="image/recipemockup.jpeg" alt="Mobile Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="flex flex-col lg:flex-row items-center mb-20">
+              <!-- Left Mobile Mockup -->
+              <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-right" data-aos-duration="1000">
+                <div class="relative w-72 h-96 lg:w-80 lg:h-[30rem] bg-gray-800 rounded-xl shadow-lg gradient-border">
+                  <!-- Placeholder for Mobile Image -->
+                  <img src="image/kendilapp.jpeg" alt="Mobile Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+                </div>
+              </div>
+              <!-- Right Content -->
+              <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-left" data-aos-duration="1000">
+                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">KendilPharma Flutter App</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                  A Flutter-based app that enables clients to browse and order medicines, developed using Flutter with a NestJS backend.
+                </p>
+                <p class="text-sm text-gray-400 mb-4">
+                  <strong>Role:</strong> Mobile App Developer - Built the application, focusing on the frontend features, backend integration, and implementing Bloc for state management to handle complex UI states efficiently.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Health Tech</span>
+                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Flutter</span>
+                </div>
+                <a href="https://github.com/SamrawitDawit/flutter-2024-Kendil-Pharma" target="_blank">
+                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
+                    View on GitHub
+                  </button>
+                </a>
+              </div>
+            </div>    
+        
+          </div>
+         </section>
+
+        
+
+
+  <section id="about" class="py-20 bg-gray-900 mt-24">
+    <h2 class="text-4xl font-bold  text-white text-center mb-12">About Me</h2>
+    <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center">
+
+        
+      <!-- About Content -->
+      <div class="w-full lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-right">
+        
+        <p class="text-lg leading-relaxed mb-6">
+          I'm a passionate frontend and Mobile App developer with a knack for creating stunning, user-friendly, and responsive websites and apps. With expertise in modern frameworks, I bring designs to life with clean and efficient code.
+        </p>
+        <p class="text-lg leading-relaxed mb-6">
+          Beyond coding, I enjoy exploring UI/UX trends, experimenting with animations, and ensuring every website I build delivers an engaging experience.
+        </p>
+        <!-- Skills Badges -->
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">HTML5</span>
+          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">CSS3</span>
+          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">Tailwind CSS</span>
+          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">Bootstrap</span>
+          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">UI/UX</span>
+        </div>
+      </div>
+      <!-- About Image -->
+      <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
+        <div 
+          class="relative w-96 h-96 bg-gray-800 rounded-full shadow-lg gradient-border flex items-center justify-center overflow-hidden"
+          style="aspect-ratio: 1/1;">
+          <!-- Placeholder for Profile Image -->
+          <img src="image/me.png" alt="Sifen's Profile" class="w-full h-full object-cover">
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section id="contact" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6 lg:px-20 mt-24">
+      <!-- Section Title -->
+      <h2 class="text-4xl font-bold mb-12 text-center text-white" data-aos="fade-up">Get in Touch</h2>
+  
+      <!-- Personal Contact Information -->
+      <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg text-center" data-aos="fade-up">
+        <p class="text-gray-400 mb-4">Feel free to reach out to me directly via email. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+        
+        <div class="break-all justify-center gap-4 mb-6">
+          <a href="mailto:sifenbeshada613@gmail.com" class="gradient-text underline hover:text-blue-500 transition-all">sifenbeshada613@gmail.com</a>
+        </div>
+
+        <a href="https://www.linkedin.com/in/sifen-beshada-483254335/" target="_blank" class="gradient-button px-6 py-2 rounded-lg text-white shadow-md  transition-all">LinkedIn</a>
+  
+        <!-- Closing Phrase -->
+        <p class="text-gray-400 mt-8 italic">"Let's build something amazing together."</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+  
+  <a href="#home" class="fixed bottom-6 right-6 bg-blue-600 p-3 rounded-full text-white shadow-md hover:bg-blue-700 transition-all">
+    ↑
+  </a>
+
+    <!-- Footer -->
+    <footer class="py-8 --dark-primary">
+        <div class="container mx-auto px-6 text-center">
+          <p>Designed and Developed by <span class="gradient-text">Sifen Beshada</span></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to navigation links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === '#' + section.getAttribute('id')) {
+                            link.classList.add('gradient-text');
+                        } else {
+                            link.classList.remove('gradient-text');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
