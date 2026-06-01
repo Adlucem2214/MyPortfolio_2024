@@ -1,397 +1,1099 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Sifen Beshada | Full-Stack & AI Systems Developer</title>
+    <!-- Tailwind CSS & AlpineJS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#030712',
+                        glass: 'rgba(10, 18, 36, 0.45)',
+                        neonCyan: '#00f2fe',
+                        neonPurple: '#c700c0',
+                        neonBlue: '#4facfe',
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js" defer></script>
+    <!-- Devicons CDN for Vector Stack Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Animation library and custom styles -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
-<body class="bg-gray-900 text-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md">
-      <div class="container mx-auto px-6 py-4">
-          <div class="flex items-center justify-between">
-              <!-- Logo -->
-              <a href="#" class="text-2xl font-bold gradient-text">Portfolio</a>
-  
-              <!-- Hamburger Menu Button -->
-              <div id="menu-toggle" class="md:hidden flex flex-col gap-1 cursor-pointer">
-                  <span class="block w-6 h-0.5 bg-white transition-all"></span>
-                  <span class="block w-6 h-0.5 bg-white transition-all"></span>
-                  <span class="block w-6 h-0.5 bg-white transition-all"></span>
-              </div>
-  
-              <!-- Navigation Links -->
-              <div id="menu" class="hidden md:flex md:space-x-8 absolute md:static top-14 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent md:flex-row flex-col shadow-md md:shadow-none rounded-md">
-                  <a href="#home" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">Home</a>
-                  <a href="#projects" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">Projects</a>
-                  <a href="#about" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">About</a>
-                  <a href="#contact" class="block px-4 py-2 text-center md:inline hover:gradient-text transition-colors">Contact</a>
-              </div>
-          </div>
-      </div>
-  </nav>
 
-    <main class="mx-16">
-    <section id="home" class="min-h-screen flex items-center bg-gray-900 mx-12">
-      <div class="container mx-auto px-6 py-20">
-          <div class="flex flex-col md:flex-row items-center">
-              <div class="md:w-1/2" data-aos="fade-right">
-                  <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                      Hi, I'm <span class="gradient-text">Sifen</span>
-                  </h1>
-                  <p class="text-xl md:text-2xl mb-8 text-gray-400">
-                       Frontend & Mobile App Developer
-                  </p>
-                  <a href="#projects">
-                    <button class="gradient-border px-8 py-3 rounded-full hover:opacity-90" >
-                      View Projects
-                   </button>
-                  </a>
-              </div>
-              <div class="md:w-1/2 mt-12 md:mt-0" data-aos="fade-left">
-                  <div class="p-2 rounded-lg">
-                      <img src="image/hero_1.svg" alt="Hero Image" class="rounded-lg w-3/4 mx-auto">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  
+<body class="bg-obsidian text-gray-100 overflow-x-hidden selection:bg-neonCyan/30 selection:text-white">
 
-    <!-- About Section -->
-    <section class="py-20 px-8">
-      <div class="container text-center mx-auto" data-aos="fade-up">
-        <h1 class="text-4xl font-bold mb-10 text-white">What can I do for you?</h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          
-          <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
-              <img src="icons/design.png" alt="Website Design" />
+    <!-- Ambient Glowing Light Orbs -->
+    <div class="glow-orb orb-cyan"></div>
+    <div class="glow-orb orb-purple"></div>
+    <div class="glow-orb orb-blue"></div>
+
+    <!-- Navigation Header -->
+    <nav class="fixed w-full z-50 bg-[#030712]/75 backdrop-blur-lg border-b border-white/5">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Branding -->
+            <a href="#" class="text-2xl font-extrabold tracking-tight gradient-text">
+                &lt;Sifen.Dev /&gt;
+            </a>
+
+            <!-- Mobile Hamburger Button -->
+            <div id="menu-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50">
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
             </div>
-            <h3 class="text-xl font-semibold mb-2 gradient-text">Website Design</h3>
-            <p class="text-sm text-gray-400">Creating visually appealing and user-friendly website designs tailored to your brand and audience, ensuring an engaging online presence.</p>
-          </div>
-          
-          <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
-              <img src="icons/app.png" alt="App Design" />
+
+            <!-- Nav Links -->
+            <div id="menu" class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home"
+                    class="text-gray-300 hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonCyan hover:after:w-full after:transition-all">Home</a>
+                <a href="#services"
+                    class="text-gray-300 hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonCyan hover:after:w-full after:transition-all">Capabilities</a>
+                <a href="#skills"
+                    class="text-gray-300 hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonCyan hover:after:w-full after:transition-all">Skills</a>
+                <a href="#projects"
+                    class="text-gray-300 hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonCyan hover:after:w-full after:transition-all">Projects</a>
+                <a href="#terminal"
+                    class="text-gray-300 hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonCyan hover:after:w-full after:transition-all">Interactive
+                    Shell</a>
+                <a href="#contact"
+                    class="gradient-btn px-5 py-2 rounded-lg text-xs tracking-wider uppercase font-semibold">Contact
+                    Console</a>
             </div>
-            <h3 class="text-xl font-semibold mb-2 gradient-text">App Design and Development</h3>
-            <p class="text-sm text-gray-400">Designing and building responsive, intuitive, and functional applications for various platforms to meet your business and user needs.</p>
-          </div>
-          
-          <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
-              <img src="icons/website.png" alt="Web Development" />
-            </div>
-            <h3 class="text-xl font-semibold mb-2 gradient-text">Web Development</h3>
-            <p class="text-sm text-gray-400">Building robust, scalable, and high-performance websites using the latest technologies to bring your ideas to life.</p>
-          </div>
-    
         </div>
-      </div>
-    </section>
-    
-
-    <section class="py-16">
-        <div class="container mx-auto text-center">
-          <h1 class="text-4xl font-bold mb-10 text-white">Skills</h1>
-          <div class="flex flex-wrap justify-center items-center space-x-4 space-y-4">
-            
-            <div class="w-20 h-20 animate-icon mr-4">
-              <img src="icons/figma.png" alt="Figma">
-            </div>
-            
-            <div class="w-20 h-20 animate-icon mr-4">
-              <img src="icons/html.png" alt="HTML">
-            </div>
-            
-            <div class="w-20 h-20 animate-icon mr-4">
-              <img src="icons/css.png" alt="CSS">
-            </div>
-            
-            <div class="w-20 h-20 animate-icon mr-4">
-              <img src="icons/js.png" alt="JavaScript">
-            </div>
-            
-            <div class="w-20 h-20 animate-icon mr-4">
-              <img src="icons/bootstrap.png" alt="Bootstrap">
-            </div>
-           
-            <div class="w-20 h-20 animate-icon mr-4">
-              <img src="icons/flutter.png" alt="Flutter">
-            </div>
-            
-            <div class="w-20 h-20 animate-icon mr-4">
-              <img src="icons/tailwind.png" alt="Tailwind">
-            </div>
-          </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 bg-[#030712]/95 z-45 flex flex-col justify-center items-center space-y-8 text-xl font-semibold">
+            <a href="#home" class="mobile-link text-gray-300 hover:text-neonCyan transition-all">Home</a>
+            <a href="#services" class="mobile-link text-gray-300 hover:text-neonCyan transition-all">Capabilities</a>
+            <a href="#skills" class="mobile-link text-gray-300 hover:text-neonCyan transition-all">Skills</a>
+            <a href="#projects" class="mobile-link text-gray-300 hover:text-neonCyan transition-all">Projects</a>
+            <a href="#terminal" class="mobile-link text-gray-300 hover:text-neonCyan transition-all">Interactive
+                Shell</a>
+            <a href="#contact" class="mobile-link gradient-text transition-all">Contact Console</a>
         </div>
-      </section>
+    </nav>
 
-         <!-- Container -->
-         <section id="projects">
-          <div class="container mx-auto py-10 px-4 lg:px-20" >
+    <!-- Main Content Wrapper -->
+    <main class="container mx-auto px-6 lg:px-16 pt-24 pb-12">
 
-            <h1 class="text-4xl font-bold mb-10 text-white text-center">Projects</h1>
-            
-            <div class="mt-12">
-                <h2 class="text-3xl font-bold mb-10 text-white text-left ">Frontend</h2>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                <!-- Left Details -->
+                <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-neonCyan font-mono">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Status: Active & Open to Opportunities
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                        Hi, I'm <span class="gradient-text">Sifen Beshada</span>
+                    </h1>
+                    <!-- Dynamic Typing Console -->
+                    <div class="h-10 text-xl md:text-2xl font-mono text-gray-300 flex items-center gap-2">
+                        <span class="text-neonCyan font-bold">&gt;</span>
+                        <span id="typed-role" class="border-r-2 border-neonCyan pr-1"></span>
+                    </div>
+
+                    <!-- High-tech mock console preview -->
+                    <div
+                        class="glass-panel p-4 rounded-xl font-mono text-sm max-w-xl border-l-4 border-l-neonCyan bg-[#060a13]">
+                        <div class="flex items-center gap-2 mb-2 pb-2 border-b border-white/5 text-gray-500 text-xs">
+                            <span class="w-3 h-3 rounded-full bg-red-500/60"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/60"></span>
+                            <span>sifen_intro.sh</span>
+                        </div>
+                        <p class="text-[#4ade80] mb-1">sifen@portfolio:~$ cat bio.txt</p>
+                        <p class="text-gray-300 leading-relaxed text-xs">
+                            "Builder specializing in distributed backends, computer vision segmentations (YOLO),
+                            high-fidelity cross-platform mobile apps (Flutter), and NLP semantic rankers."
+                        </p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projects"
+                            class="gradient-btn px-8 py-3.5 rounded-xl text-sm font-semibold tracking-wider transition-all">
+                            Access Projects
+                        </a>
+                        <a href="#terminal"
+                            class="px-8 py-3.5 rounded-xl text-sm font-semibold border border-white/10 hover:border-neonCyan/40 hover:bg-white/5 transition-all font-mono">
+                            cat console_resume.txt
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual Mockups -->
+                <div class="lg:col-span-5 flex justify-center" data-aos="fade-left">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Background Glow Matrix -->
+                        <div
+                            class="absolute -inset-4 rounded-full bg-gradient-to-tr from-neonCyan to-neonPurple opacity-30 blur-2xl animate-pulse">
+                        </div>
+                        <div class="relative glass-panel p-2 rounded-2xl glow-border">
+                            <img src="image/hero_1.svg" alt="Hero Illustration"
+                                class="w-full h-auto rounded-xl animate-float">
+                        </div>
+                    </div>
+                </div>
             </div>
-          
-            <!-- Project 1 -->
-            <div class="flex flex-col-reverse lg:flex-row items-center mb-20">
-              <!-- Left Content -->
-              <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
-                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">StockMinder</h2>
-                <p class="text-lg leading-relaxed mb-4 pr-4">
-                  StockMinder is a comprehensive inventory management solution that enables businesses to efficiently monitor stock levels and provides timely notifications when items are low, ensuring seamless operations and optimal inventory control.
+        </section>
+
+
+        <!-- Services / Capabilities Section -->
+        <section id="services" class="py-24 border-t border-white/5">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-xs uppercase tracking-widest text-neonCyan font-mono font-semibold mb-2">// CAPABILITIES
+                </h2>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">What I Can Do For You</h1>
+                <p class="text-gray-400 mt-4 text-sm md:text-base leading-relaxed">
+                    Engineering reliable, premium solutions integrating custom artificial intelligence, clean full-stack
+                    backends, and modular mobile architecture patterns.
                 </p>
-                <p class="text-sm text-gray-400 mb-4"><strong>Role:</strong> Frontend Developer - Designed and implemented the user interface using modern web technologies.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Inventory</span>
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Low Stock Alerts</span>
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Business</span>
-                </div>
-                <a href="https://github.com/Adlucem2214/FSW-frontend" target="_blank">
-                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
-                    View on GitHub
-                  </button>
-                </a>
-              </div>
-              <!-- Right Desktop Mockup -->
-              <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
-                <div class="relative w-full lg:w-[500px] h-80 bg-gray-800 rounded-lg shadow-lg gradient-border">
-                  <!-- Desktop Image -->
-                  <img src="image/stkmock.png" alt="Desktop Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
-                </div>
-              </div>
             </div>
-            
-            <!-- Project 2 -->
-            <div class="flex flex-col lg:flex-row items-center mb-20">
-              <!-- Left Desktop Mockup -->
-              <div 
-                class="w-full lg:w-1/2 flex justify-center pr-4" 
-                data-aos="fade-right" 
-                data-aos-duration="1000"
-              >
-                <div class="relative w-full lg:w-[500px] h-80 bg-gray-800 rounded-lg shadow-lg gradient-border mr-4">
-                  <!-- Desktop Image -->
-                  <img src="image/kendilwebmock.jpeg" alt="Desktop Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: AI & Computer Vision -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="space-y-4">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-neonCyan/10 border border-neonCyan/25 flex items-center justify-center text-neonCyan text-2xl font-mono">
+                            🤖
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">AI & Computer Vision</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Developing custom object detection architectures using YOLO models, instance segmentations,
+                            3D nutritional volume estimation, and medical threshold clinical matrices.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6 flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonCyan">YOLOv8</span>
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonCyan">Computer
+                            Vision</span>
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonCyan">3D
+                            Estimation</span>
+                    </div>
                 </div>
-              </div>
-              <!-- Right Content -->
-              <div 
-                class="w-full lg:w-1/2 text-center lg:text-left pl-8" 
-                data-aos="fade-left" 
-                data-aos-duration="1000"
-              >
-                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">KendilPharma Website</h2>
-                <p class="text-lg leading-relaxed">
-                  Kendil Pharma is a web platform that allows pharmacists to upload and manage medicine inventories while enabling clients to browse and access available medicines. It simplifies inventory management, enhances accessibility, and ensures a seamless experience for both pharmacists and customers.
-                </p>
-                <p class="text-sm text-gray-400 mb-4 mt-4"><strong>Role:</strong> Full-Stack Developer - Developed the frontend and integrated the backend using modern frameworks and technologies.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Health Tech</span>
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Pharmaceutical Solutions</span>
+
+                <!-- Service 2: Full-Stack Web Applications -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="space-y-4">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-neonBlue/10 border border-neonBlue/25 flex items-center justify-center text-neonBlue text-2xl font-mono">
+                            ⚡
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Full-Stack Web Apps</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Architecting resilient, type-safe architectures leveraging React, Angular, Spring Boot,
+                            NestJS, and robust SQL/NoSQL databases with optimal JWT authentication structures.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6 flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonBlue">Spring
+                            Boot</span>
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonBlue">Angular /
+                            React</span>
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonBlue">TypeScript</span>
+                    </div>
                 </div>
-                <a href="https://github.com/SamrawitDawit/Kendil-Pharma" target="_blank">
-                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
-                    View on GitHub
-                  </button>
-                </a>
-              </div>
+
+                <!-- Service 3: Mobile & State Architecture -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="space-y-4">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-neonPurple/10 border border-neonPurple/25 flex items-center justify-center text-neonPurple text-2xl font-mono">
+                            📱
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Mobile Architectures</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Building native, responsive cross-platform mobile apps using Flutter and Dart, integrating
+                            complex BLoC state management systems, and building seamless REST APIs.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6 flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonPurple">Flutter</span>
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonPurple">Dart</span>
+                        <span class="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-neonPurple">BLoC</span>
+                    </div>
+                </div>
             </div>
-            
-            <h2 class="text-3xl font-bold mt-12 pt-8 mb-20 text-white text-left ">Mobile Development Projects</h2>
-            
-            <!-- Project 3 -->
-            <div class="flex flex-col-reverse lg:flex-row items-center mb-10 gap-6 lg:gap-4">
-              <!-- Left Content -->
-              <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
-                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">Flavchemy Recipe Sharing App</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                  Flavchemy is a Flutter-based app that allows users to discover, share, and save recipes. It features a user-friendly interface, easy navigation, and functionalities like recipe categorization, favorites, and search.
+        </section>
+
+
+        <!-- Core Senior Developer Skills Section -->
+        <section id="skills" class="py-24 border-t border-white/5">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-xs uppercase tracking-widest text-neonCyan font-mono font-semibold mb-2">// TECHNICAL
+                    STACKS</h2>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Engineered Tech Arsenal</h1>
+                <p class="text-gray-400 mt-4 text-sm md:text-base leading-relaxed">
+                    Highly proficient in modern web, mobile, database, and machine learning systems. Click on
+                    interactive tabs below to view detailed skill structures.
                 </p>
-                <p class="text-sm text-gray-400 mb-4"><strong>Role:</strong> App Developer - Designed and implemented the app interface and logic using Flutter.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Flutter</span>
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Recipe</span>
-                </div>
-                <a href="https://github.com/Adlucem2214/Project4/tree/add_new_recipe" target="_blank">
-                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
-                    View on GitHub
-                  </button>
-                </a>
-              </div>
-              <!-- Right Desktop Mockup -->
-              <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
-                <div class="relative w-72 h-96 lg:w-80 lg:h-[30rem] bg-gray-800 rounded-xl shadow-lg gradient-border">
-                  <!-- Placeholder for Mobile Image -->
-                  <img src="image/recipemockup.jpeg" alt="Mobile Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
-                </div>
-              </div>
             </div>
-            
-            <!-- Project 4 -->
-            <div class="flex flex-col lg:flex-row items-center mb-20">
-              <!-- Left Mobile Mockup -->
-              <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-right" data-aos-duration="1000">
-                <div class="relative w-72 h-96 lg:w-80 lg:h-[30rem] bg-gray-800 rounded-xl shadow-lg gradient-border">
-                  <!-- Placeholder for Mobile Image -->
-                  <img src="image/kendilapp.jpeg" alt="Mobile Mockup" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+
+            <!-- Interactive Skills Tabs -->
+            <div x-data="{ tab: 'backend' }" class="space-y-8" data-aos="fade-up">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button @click="tab = 'backend'"
+                        :class="tab === 'backend' ? 'bg-neonCyan/20 text-neonCyan border-neonCyan' : 'bg-white/5 text-gray-400 border-white/10'"
+                        class="px-6 py-2.5 rounded-xl border text-sm font-mono tracking-wider font-semibold transition-all">
+                        Backend & Systems
+                    </button>
+                    <button @click="tab = 'frontend'"
+                        :class="tab === 'frontend' ? 'bg-neonCyan/20 text-neonCyan border-neonCyan' : 'bg-white/5 text-gray-400 border-white/10'"
+                        class="px-6 py-2.5 rounded-xl border text-sm font-mono tracking-wider font-semibold transition-all">
+                        Frontend & Mobile
+                    </button>
+                    <button @click="tab = 'ai'"
+                        :class="tab === 'ai' ? 'bg-neonCyan/20 text-neonCyan border-neonCyan' : 'bg-white/5 text-gray-400 border-white/10'"
+                        class="px-6 py-2.5 rounded-xl border text-sm font-mono tracking-wider font-semibold transition-all">
+                        AI, Vision & Tools
+                    </button>
                 </div>
-              </div>
-              <!-- Right Content -->
-              <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-left" data-aos-duration="1000">
-                <h2 class="text-4xl font-bold mb-4 gradient-text mt-8">KendilPharma Flutter App</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                  A Flutter-based app that enables clients to browse and order medicines, developed using Flutter with a NestJS backend.
-                </p>
-                <p class="text-sm text-gray-400 mb-4">
-                  <strong>Role:</strong> Mobile App Developer - Built the application, focusing on the frontend features, backend integration, and implementing Bloc for state management to handle complex UI states efficiently.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Health Tech</span>
-                  <span class="bg-gray-800 text-gray-300 px-4 py-2 rounded-full border border-gray-600">Flutter</span>
+
+                <!-- Skills Lists Grid -->
+                <div>
+                    <!-- Backend Tab -->
+                    <div x-show="tab === 'backend'" class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                        <!-- SpringBoot -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-spring-original colored"></i></div>
+                            <h4 class="font-semibold text-white">Spring Boot</h4>
+                            <p class="text-xs text-neonCyan mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- Python -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-python-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">Python</h4>
+                            <p class="text-xs text-neonCyan mt-1 font-mono">Proficient</p>
+                        </div>
+                        <!-- TypeScript -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-typescript-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">TypeScript</h4>
+                            <p class="text-xs text-neonCyan mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- JavaScript -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-javascript-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">JavaScript</h4>
+                            <p class="text-xs text-neonCyan mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- FastAPI -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-fastapi-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">FastAPI</h4>
+                            <p class="text-xs text-neonCyan mt-1 font-mono">Proficient</p>
+                        </div>
+                        <!-- Node.js -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-nodejs-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">Node.js</h4>
+                            <p class="text-xs text-neonCyan mt-1 font-mono">Proficient</p>
+                        </div>
+                        <!-- GoLang -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-go-original-wordmark colored"></i></div>
+                            <h4 class="font-semibold text-white">GoLang</h4>
+                            <p class="text-xs text-neonCyan mt-1 font-mono">Proficient</p>
+                        </div>
+                    </div>
+
+                    <!-- Frontend Tab -->
+                    <div x-show="tab === 'frontend'" class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                        <!-- Angular -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-angularjs-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">Angular</h4>
+                            <p class="text-xs text-neonBlue mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- React -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-react-original colored"></i></div>
+                            <h4 class="font-semibold text-white">React</h4>
+                            <p class="text-xs text-neonBlue mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- Flutter -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-flutter-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">Flutter</h4>
+                            <p class="text-xs text-neonBlue mt-1 font-mono">Proficient</p>
+                        </div>
+                        <!-- Tailwind -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-tailwindcss-original colored"></i></div>
+                            <h4 class="font-semibold text-white">Tailwind CSS</h4>
+                            <p class="text-xs text-neonBlue mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- Bootstrap -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-bootstrap-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">Bootstrap</h4>
+                            <p class="text-xs text-neonBlue mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- HTML5 -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-html5-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">HTML5</h4>
+                            <p class="text-xs text-neonBlue mt-1 font-mono">Expert</p>
+                        </div>
+                        <!-- CSS3 -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-css3-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">CSS3</h4>
+                            <p class="text-xs text-neonBlue mt-1 font-mono">Expert</p>
+                        </div>
+                    </div>
+
+                    <!-- AI & Tools Tab -->
+                    <div x-show="tab === 'ai'" class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                        <!-- YOLO (Computer Vision) -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3 text-neonPurple">👁️</div>
+                            <h4 class="font-semibold text-white">YOLO Vision</h4>
+                            <p class="text-xs text-neonPurple mt-1 font-mono">Instance Seg.</p>
+                        </div>
+                        <!-- Machine Learning -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3 text-neonPurple">🤖</div>
+                            <h4 class="font-semibold text-white">Machine Learning</h4>
+                            <p class="text-xs text-neonPurple mt-1 font-mono">Proficient</p>
+                        </div>
+                        <!-- Figma -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-figma-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">Figma</h4>
+                            <p class="text-xs text-neonPurple mt-1 font-mono">Design Pro</p>
+                        </div>
+                        <!-- VSCode -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-vscode-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">VS Code</h4>
+                            <p class="text-xs text-neonPurple mt-1 font-mono">Daily Driver</p>
+                        </div>
+                        <!-- IntelliJ -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3"><i class="devicon-intellij-plain colored"></i></div>
+                            <h4 class="font-semibold text-white">IntelliJ IDEA</h4>
+                            <p class="text-xs text-neonPurple mt-1 font-mono">Daily Driver</p>
+                        </div>
+                        <!-- Apache Superset -->
+                        <div class="glass-panel p-6 rounded-2xl text-center skill-card">
+                            <div class="text-4xl mb-3 text-neonPurple">📊</div>
+                            <h4 class="font-semibold text-white">Apache Superset</h4>
+                            <p class="text-xs text-neonPurple mt-1 font-mono">Analytics</p>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://github.com/SamrawitDawit/flutter-2024-Kendil-Pharma" target="_blank">
-                  <button class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
-                    View on GitHub
-                  </button>
-                </a>
-              </div>
-            </div>    
-        
-          </div>
-         </section>
-
-        
+            </div>
+        </section>
 
 
-  <section id="about" class="py-20 bg-gray-900 mt-24">
-    <h2 class="text-4xl font-bold  text-white text-center mb-12">About Me</h2>
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center">
+        <!-- Premium Projects Showcase Section -->
+        <section id="projects" class="py-24 border-t border-white/5">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-xs uppercase tracking-widest text-neonCyan font-mono font-semibold mb-2">// DEV ARCHIVE
+                </h2>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Featured Project Architectures</h1>
+                <p class="text-gray-400 mt-4 text-sm md:text-base leading-relaxed">
+                    A list of complex, production-ready engineering systems spanning computer vision, full-stack matrix
+                    dashboards, and NLP semantic matching algorithms.
+                </p>
+            </div>
 
-        
-      <!-- About Content -->
-      <div class="w-full lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-right">
-        
-        <p class="text-lg leading-relaxed mb-6">
-          I'm a passionate frontend and Mobile App developer with a knack for creating stunning, user-friendly, and responsive websites and apps. With expertise in modern frameworks, I bring designs to life with clean and efficient code.
-        </p>
-        <p class="text-lg leading-relaxed mb-6">
-          Beyond coding, I enjoy exploring UI/UX trends, experimenting with animations, and ensuring every website I build delivers an engaging experience.
-        </p>
-        <!-- Skills Badges -->
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">HTML5</span>
-          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">CSS3</span>
-          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">Tailwind CSS</span>
-          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">Bootstrap</span>
-          <span class="bg-gray-800 px-4 py-2 rounded-full text-gray-300 border border-gray-700">UI/UX</span>
-        </div>
-      </div>
-      <!-- About Image -->
-      <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
-        <div 
-          class="relative w-96 h-96 bg-gray-800 rounded-full shadow-lg gradient-border flex items-center justify-center overflow-hidden"
-          style="aspect-ratio: 1/1;">
-          <!-- Placeholder for Profile Image -->
-          <img src="image/me.png" alt="Sifen's Profile" class="w-full h-full object-cover">
-        </div>
-      </div>
-      
-    </div>
-  </section>
+            <!-- Categories Separator -->
+            <div class="space-y-32">
 
-  <section id="contact" class="py-20 bg-gray-800">
-    <div class="container mx-auto px-6 lg:px-20 mt-24">
-      <!-- Section Title -->
-      <h2 class="text-4xl font-bold mb-12 text-center text-white" data-aos="fade-up">Get in Touch</h2>
-  
-      <!-- Personal Contact Information -->
-      <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg text-center" data-aos="fade-up">
-        <p class="text-gray-400 mb-4">Feel free to reach out to me directly via email. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-        
-        <div class="break-all justify-center gap-4 mb-6">
-          <a href="mailto:sifenbeshada613@gmail.com" class="gradient-text hover:text-blue-500 transition-all">sifenbeshada613@gmail.com</a>
-        </div>
+                <!-- 1. AI & COMPUTER VISION HIGHLIGHT -->
+                <div class="space-y-12">
+                    <div class="border-l-4 border-neonCyan pl-4">
+                        <span class="text-xs font-mono text-neonCyan font-bold uppercase tracking-wider">Category // AI
+                            & 3D Computer Vision</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1">Instance Segmentation & Clinical Trackers
+                        </h2>
+                    </div>
 
-        <a href="https://www.linkedin.com/in/sifen-beshada-483254335/" target="_blank" class="gradient-button px-6 py-2 rounded-lg text-white shadow-md  transition-all">LinkedIn</a>
-  
-        <!-- Closing Phrase -->
-        <p class="text-gray-400 mt-8 italic">"Let's build something amazing together."</p>
-      </div>
-    </div>
-  </section>
+                    <!-- Project: EthioCal -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Description (Left) -->
+                        <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="text-xs font-mono px-3 py-1 rounded bg-neonCyan/10 border border-neonCyan/20 text-neonCyan">Flutter
+                                    Mobile</span>
+                                <span
+                                    class="text-xs font-mono px-3 py-1 rounded bg-neonPurple/10 border border-neonPurple/20 text-neonPurple">YOLOv8
+                                    Segmentation</span>
+                            </div>
+                            <h3 class="text-4xl font-extrabold text-white tracking-tight">
+                                EthioCal: Localized Clinical AI Health Ecosystem
+                            </h3>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                                EthioCal is a pioneering, localized, AI-powered health and nutritional tracking
+                                ecosystem tailored specifically for traditional Ethiopian cuisine. Most global fitness
+                                applications (e.g., MyFitnessPal) completely ignore East African diets, making it
+                                incredibly difficult for individuals—especially those managing chronic illnesses like
+                                diabetes, hypertension, and cardiovascular diseases—to track their daily nutritional
+                                intake.
+                            </p>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                EthioCal solves this by combining cutting-edge computer vision (3D volume estimation), a
+                                mobile-first native interface, and clinical medical guidelines (ADA, AHA, and Ethiopian
+                                NCD guidelines) to deliver localized wellness at scale.
+                            </p>
 
-</main>
-  
-  <a href="#home" class="fixed bottom-6 right-6 bg-blue-600 p-3 rounded-full text-white shadow-md hover:bg-blue-700 transition-all">
-    ↑
-  </a>
+                            <!-- Tech Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">YOLOv8
+                                    Seg.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">3D
+                                    Volume Estimation</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">Flutter
+                                    / Dart</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">NestJS
+                                    Backend</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">NCD
+                                    Guidelines</span>
+                            </div>
+                        </div>
+
+                        <!-- iPhone Mockup (Right) -->
+                        <div class="lg:col-span-5 flex justify-center" data-aos="fade-left">
+                            <div class="relative group">
+                                <div
+                                    class="absolute -inset-4 rounded-full bg-neonCyan/10 blur-xl group-hover:bg-neonCyan/25 transition-all">
+                                </div>
+
+                                <!-- Sleek iPhone Chassis -->
+                                <div class="iphone-mockup">
+                                    <div class="screen-content" x-data="{ playing: false }">
+                                        <!-- Play/Pause Overlay -->
+                                        <div class="video-overlay" x-show="!playing"
+                                            @click="playing = true; $refs.video.play()">
+                                            <div class="play-btn-circle">
+                                                <span>▶</span>
+                                            </div>
+                                        </div>
+                                        <!-- Native HTML5 Video Element -->
+                                        <video x-ref="video" class="w-full h-full object-cover" loop muted playsinline
+                                            @click="playing = false; $refs.video.pause()">
+                                            <source src="image/Animated-iPhone-mockups(2)(1).mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. FULL-STACK WEB SOLUTIONS HIGHLIGHT -->
+                <div class="space-y-12">
+                    <div class="border-l-4 border-neonBlue pl-4">
+                        <span class="text-xs font-mono text-neonBlue font-bold uppercase tracking-wider">Category //
+                            Full-Stack Web Architectures</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1">Distributed Dashboards & Console portals
+                        </h2>
+                    </div>
+
+                    <!-- Project: EthioCal Admin Portal -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Browser Mockup (Left) -->
+                        <div class="lg:col-span-6 flex justify-center" data-aos="fade-right">
+                            <div class="relative group w-full">
+                                <div
+                                    class="absolute -inset-4 rounded-full bg-neonBlue/10 blur-xl group-hover:bg-neonBlue/25 transition-all">
+                                </div>
+
+                                <!-- Mock Browser Chrome -->
+                                <div class="browser-mockup">
+                                    <div class="browser-header">
+                                        <div class="browser-dots">
+                                            <span class="browser-dot dot-red"></span>
+                                            <span class="browser-dot dot-yellow"></span>
+                                            <span class="browser-dot dot-green"></span>
+                                        </div>
+                                        <div class="browser-address">https://health-hub-dashboard.up.railway.app</div>
+                                    </div>
+                                    <div class="browser-body">
+                                        <img src="image/ethiocal_admin.jpeg" alt="Ethiocal Admin Portal Console Mockup"
+                                            class="w-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description (Right) -->
+                        <div class="lg:col-span-6 space-y-6" data-aos="fade-left">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="text-xs font-mono px-3 py-1 rounded bg-neonBlue/10 border border-neonBlue/20 text-neonBlue">React
+                                    Frontend</span>
+                                <span
+                                    class="text-xs font-mono px-3 py-1 rounded bg-neonPurple/10 border border-neonPurple/20 text-neonPurple">Deployed
+                                    on Railway</span>
+                            </div>
+                            <h3 class="text-4xl font-extrabold text-white tracking-tight">
+                                Ethiocal Admin Portal Console
+                            </h3>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                                The Ethiocal Admin Portal is a high-performance health and nutrition management console.
+                                As the structural backbone of the Ethiocal wellness platform, it empowers operational
+                                teams and clinical editors to monitor real-time user metrics, configure dynamic dietary
+                                restriction matrices, and manage localized bilingual medical content.
+                            </p>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Leveraging React and TypeScript, the console interface simplifies intricate medical
+                                clinical rules—such as configuring user-specific micro/macronutrient threshold
+                                limits—providing secure control across the decentralized healthcare ecosystem.
+                            </p>
+
+                            <!-- Tech Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">React</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">TypeScript</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">TailwindCSS</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">Railway
+                                    Backend</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. NATURAL LANGUAGE PROCESSING HIGHLIGHT -->
+                <div class="space-y-12">
+                    <div class="border-l-4 border-neonPurple pl-4">
+                        <span class="text-xs font-mono text-neonPurple font-bold uppercase tracking-wider">Category //
+                            Natural Language Processing (NLP)</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1">Semantic Parsers & Skill Matching Pipelines
+                        </h2>
+                    </div>
+
+                    <!-- Project: Resume Scanner -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Description (Left) -->
+                        <div class="lg:col-span-6 space-y-6" data-aos="fade-right">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="text-xs font-mono px-3 py-1 rounded bg-neonPurple/10 border border-neonPurple/20 text-neonPurple">NLP
+                                    semantic match</span>
+                                <span
+                                    class="text-xs font-mono px-3 py-1 rounded bg-neonCyan/10 border border-neonCyan/20 text-neonCyan">Python
+                                    / FastAPI</span>
+                            </div>
+                            <h3 class="text-4xl font-extrabold text-white tracking-tight">
+                                AI Resume-Job Semantic Matcher
+                            </h3>
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                                A production-ready AI parsing system utilizing advanced Natural Language Processing to
+                                analyze and match resumes against job descriptions based on structural skills and
+                                semantic context rather than simple keyword matches.
+                            </p>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                The backend leverages a multi-model approach, combining SBERT embedding semantic
+                                vectors, custom skill token extraction pipelines, and TF-IDF analysis to compute
+                                rigorous candidate scoring grids with 85%+ accuracy.
+                            </p>
+
+                            <!-- Tech Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">SBERT
+                                    Embeddings</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">TF-IDF
+                                    Scoring</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">FastAPI
+                                    / Python</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300 font-mono">React
+                                    / TS</span>
+                            </div>
+                        </div>
+
+                        <!-- Browser Mockup Carousel (Right) -->
+                        <div class="lg:col-span-6 flex justify-center" data-aos="fade-left">
+                            <!-- Alpine.js Carousel Container -->
+                            <div x-data="{ currentImg: 'main' }" class="relative group w-full">
+                                <div
+                                    class="absolute -inset-4 rounded-full bg-neonPurple/10 blur-xl group-hover:bg-neonPurple/25 transition-all">
+                                </div>
+
+                                <!-- Mock Browser Chrome -->
+                                <div class="browser-mockup">
+                                    <div class="browser-header">
+                                        <div class="browser-dots">
+                                            <span class="browser-dot dot-red"></span>
+                                            <span class="browser-dot dot-yellow"></span>
+                                            <span class="browser-dot dot-green"></span>
+                                        </div>
+                                        <div class="browser-address">https://resume-nlp-matcher.dev</div>
+                                        <!-- Carousel toggle overlay button -->
+                                        <button @click="currentImg = (currentImg === 'main' ? 'detail' : 'main')"
+                                            class="absolute right-4 text-[10px] font-mono font-bold tracking-wider px-2 py-1 rounded border border-neonCyan/30 bg-neonCyan/10 text-neonCyan hover:bg-neonCyan/20 transition-all z-20">
+                                            Toggle: Match Details
+                                        </button>
+                                    </div>
+                                    <div class="browser-body">
+                                        <!-- Show Main Dashboard -->
+                                        <img x-show="currentImg === 'main'" src="image/resume_scanner.png"
+                                            alt="Resume Matcher Dashboard" class="w-full h-auto block">
+                                        <!-- Show Details Breakdown -->
+                                        <img x-show="currentImg === 'detail'" src="image/resume_scanner_detail.png"
+                                            alt="Resume Matcher Score Grid" class="w-full h-auto block">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. ADDITIONAL CLASSIC PROJECTS -->
+                <div class="pt-12 space-y-12">
+                    <div class="border-l-4 border-gray-600 pl-4">
+                        <span class="text-xs font-mono text-gray-400 font-bold uppercase tracking-wider">Category //
+                            Legacy Solutions</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1">Earlier Full-Stack & Mobile Stacks</h2>
+                    </div>
+
+                    <!-- Legacy Projects Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Legacy Project 1: StockMinder -->
+                        <div
+                            class="glass-panel p-6 rounded-2xl hover:border-neonBlue/30 transition-all flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="browser-mockup mb-4">
+                                    <div class="browser-header">
+                                        <div class="browser-dots"><span class="browser-dot dot-red"></span><span
+                                                class="browser-dot dot-yellow"></span><span
+                                                class="browser-dot dot-green"></span></div>
+                                    </div>
+                                    <div class="browser-body"><img src="image/stkmock.png" alt="StockMinder Mockup"
+                                            class="w-full h-auto block"></div>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">StockMinder Inventory Suite</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Comprehensive inventory and warehousing application monitoring real-time stock
+                                    levels. Delivers automated alerts when inventory quantities fall beneath safety
+                                    thresholds, supporting optimal control interfaces.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                                <span class="text-xs font-mono text-neonBlue">React / HTML5</span>
+                                <a href="https://github.com/Adlucem2214/FSW-frontend" target="_blank"
+                                    class="text-xs text-neonCyan hover:underline font-mono">GitHub &gt;</a>
+                            </div>
+                        </div>
+
+                        <!-- Legacy Project 2: KendilPharma Web -->
+                        <div
+                            class="glass-panel p-6 rounded-2xl hover:border-neonBlue/30 transition-all flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="browser-mockup mb-4">
+                                    <div class="browser-header">
+                                        <div class="browser-dots"><span class="browser-dot dot-red"></span><span
+                                                class="browser-dot dot-yellow"></span><span
+                                                class="browser-dot dot-green"></span></div>
+                                    </div>
+                                    <div class="browser-body"><img src="image/kendilwebmock.jpeg"
+                                            alt="KendilPharma Mockup" class="w-full h-auto block"></div>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">KendilPharma Portal</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    A full-stack pharmaceutical operations website allowing operators to manage medicine
+                                    inventories, set safety limits, and permit clients to easily explore medicine
+                                    selections.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                                <span class="text-xs font-mono text-neonBlue">React / NestJS</span>
+                                <a href="https://github.com/SamrawitDawit/Kendil-Pharma" target="_blank"
+                                    class="text-xs text-neonCyan hover:underline font-mono">GitHub &gt;</a>
+                            </div>
+                        </div>
+
+                        <!-- Legacy Project 3: Flavchemy App -->
+                        <div
+                            class="glass-panel p-6 rounded-2xl hover:border-neonPurple/30 transition-all flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="flex justify-center mb-4 bg-black/20 py-6 rounded-xl">
+                                    <div
+                                        style="width:160px;height:320px;background:#090e1a;border:8px solid #1f293d;border-radius:32px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.6);">
+                                        <img src="image/recipemockup.jpeg" alt="Flavchemy App"
+                                            style="width:100%;height:100%;object-fit:cover;">
+                                    </div>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Flavchemy Recipe Platform</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    A gorgeous cross-platform recipe catalog sharing mobile app built on Flutter.
+                                    Features dynamic search, categorized recipe catalogs, and customized user profiles.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                                <span class="text-xs font-mono text-neonPurple">Flutter / BLoC</span>
+                                <a href="https://github.com/Adlucem2214/Project4/tree/add_new_recipe" target="_blank"
+                                    class="text-xs text-neonCyan hover:underline font-mono">GitHub &gt;</a>
+                            </div>
+                        </div>
+
+                        <!-- Legacy Project 4: KendilPharma App -->
+                        <div
+                            class="glass-panel p-6 rounded-2xl hover:border-neonPurple/30 transition-all flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="flex justify-center mb-4 bg-black/20 py-6 rounded-xl">
+                                    <div
+                                        style="width:160px;height:320px;background:#090e1a;border:8px solid #1f293d;border-radius:32px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.6);">
+                                        <img src="image/kendilapp.jpeg" alt="KendilPharma App"
+                                            style="width:100%;height:100%;object-fit:cover;">
+                                    </div>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">KendilPharma Flutter App</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Cross-platform pharmaceutical client mobile app enabling patients to easily discover
+                                    medicine inventories, register medicine requirements, and coordinate order
+                                    dispatches.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                                <span class="text-xs font-mono text-neonPurple">Flutter / Bloc State</span>
+                                <a href="https://github.com/SamrawitDawit/flutter-2024-Kendil-Pharma" target="_blank"
+                                    class="text-xs text-neonCyan hover:underline font-mono">GitHub &gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- [NEW] Fully Interactive Retro-Modern Developer Shell Terminal -->
+        <section id="terminal" class="py-24 border-t border-white/5">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-xs uppercase tracking-widest text-neonCyan font-mono font-semibold mb-2">// PLAYABLE
+                        INTERACTIVE CLI</h2>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-white">Sifen's Command Line Resume</h1>
+                    <p class="text-gray-400 mt-3 text-sm font-mono text-xs">
+                        type <span class="text-neonCyan">help</span> and press Enter to query Sifen's active stack.
+                    </p>
+                </div>
+
+                <!-- Console Frame -->
+                <div class="terminal-container" data-aos="fade-up">
+                    <div class="terminal-header">
+                        <div class="terminal-title">
+                            <span class="inline-block w-2.5 h-2.5 rounded-full bg-neonCyan animate-pulse"></span>
+                            <span>sifen@resumeshell:~$</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Interactive shell
+                            v1.2</span>
+                    </div>
+
+                    <!-- Display Output Area -->
+                    <div class="terminal-body" id="term-body">
+                        <div class="terminal-output text-[#4ade80]">Welcome to Sifen Beshada's dynamic command-line
+                            developer console!
+
+                            Type 'help' to check standard CLI commands or queries.</div>
+                        <div class="terminal-output text-gray-500 text-xs">
+                            --------------------------------------------------------------</div>
+                    </div>
+
+                    <!-- Prompt input area -->
+                    <div class="px-4 py-3 border-t border-[#00f2fe]/10 bg-[#04060d] flex items-center gap-2">
+                        <span class="text-[#4ade80] font-mono text-sm">sifen@resumeshell:~$</span>
+                        <input type="text" id="term-input" class="terminal-input" placeholder="help" autocomplete="off"
+                            autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <span class="terminal-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Me Section -->
+        <section id="about" class="py-24 border-t border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Details (Left) -->
+                <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
+                    <h2 class="text-xs uppercase tracking-widest text-neonCyan font-mono font-semibold mb-2">// PROFILE
+                        LOG</h2>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white">About Sifen Beshada</h1>
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                        I am a highly motivated Full-Stack Developer and Artificial Intelligence systems engineer with a
+                        background in designing cutting-edge, secure full-stack software and machine learning platforms.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        By integrating rigorous AI-driven visual detection models (like YOLO) with structured backend
+                        systems (Spring Boot) and type-safe user layouts (React/TypeScript), I specialize in building
+                        complete digital ecosystems from concept validation to production-ready deployments.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span
+                            class="bg-white/5 px-4 py-2 rounded-full text-xs text-gray-300 border border-white/5 font-mono">React
+                            / Angular</span>
+                        <span
+                            class="bg-white/5 px-4 py-2 rounded-full text-xs text-gray-300 border border-white/5 font-mono">Spring
+                            Boot</span>
+                        <span
+                            class="bg-white/5 px-4 py-2 rounded-full text-xs text-gray-300 border border-white/5 font-mono">YOLO
+                            Computer Vision</span>
+                        <span
+                            class="bg-white/5 px-4 py-2 rounded-full text-xs text-gray-300 border border-white/5 font-mono">Flutter
+                            Native</span>
+                    </div>
+                </div>
+
+                <!-- Visual Picture frame (Right) -->
+                <div class="lg:col-span-5 flex justify-center" data-aos="fade-left">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 rounded-full bg-neonPurple/10 blur-xl group-hover:bg-neonPurple/25 transition-all">
+                        </div>
+                        <div
+                            class="relative w-72 h-72 rounded-full overflow-hidden border-2 border-white/10 glow-border">
+                            <img src="image/me.png" alt="Sifen Beshada Profile"
+                                class="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Get In Touch Contact Section -->
+        <section id="contact" class="py-24 border-t border-white/5">
+            <div class="max-w-4xl mx-auto bg-glass backdrop-blur-md p-10 rounded-3xl border border-white/5 shadow-2xl text-center space-y-8 relative overflow-hidden"
+                data-aos="fade-up">
+                <!-- Inner glow -->
+                <div class="absolute -top-32 -left-32 w-64 h-64 bg-neonCyan/15 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-32 -right-32 w-64 h-64 bg-neonPurple/15 rounded-full blur-3xl"></div>
+
+                <div class="space-y-4">
+                    <h2 class="text-xs uppercase tracking-widest text-neonCyan font-mono font-semibold">// CONNECT</h2>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white">Let's Synthesize Something Great</h1>
+                    <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+                        I am always open to exploring cutting-edge full-stack architectures, custom AI vision models,
+                        and USA internship or engineering opportunities.
+                    </p>
+                </div>
+
+                <!-- Dynamic copy to clipboard card -->
+                <div
+                    class="max-w-md mx-auto p-4 rounded-xl bg-black/45 border border-white/5 flex items-center justify-between gap-4 font-mono text-sm text-[#a5b4fc]">
+                    <span class="truncate">sifenbeshada613@gmail.com</span>
+                    <button
+                        onclick="navigator.clipboard.writeText('sifenbeshada613@gmail.com'); alert('Email address copied to clipboard!');"
+                        class="px-4 py-1.5 rounded-lg bg-neonCyan/10 border border-neonCyan/30 text-neonCyan hover:bg-neonCyan/20 transition-all font-bold text-xs">
+                        COPY
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <a href="mailto:sifenbeshada613@gmail.com"
+                        class="gradient-btn px-8 py-3.5 rounded-xl text-sm font-semibold tracking-wider transition-all">
+                        Send Direct Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/sifen-beshada-483254335/" target="_blank"
+                        class="px-8 py-3.5 rounded-xl text-sm border border-white/10 hover:border-neonCyan/40 hover:bg-white/5 transition-all font-semibold font-mono text-gray-300">
+                        LinkedIn Profile
+                    </a>
+                </div>
+
+                <p class="text-gray-500 italic text-xs pt-4 font-mono">"Let's build something amazing together."</p>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer class="py-8 --dark-primary">
-        <div class="container mx-auto px-6 text-center">
-          <p>Designed and Developed by <span class="gradient-text">Sifen Beshada</span></p>
+    <footer class="py-12 border-t border-white/5 bg-[#02050b]/80 backdrop-blur-md">
+        <div
+            class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+            <p>© 2026 Designed & Engineered by <span class="gradient-text font-bold">Sifen Beshada</span>.</p>
+            <div class="flex space-x-6">
+                <a href="#home" class="hover:text-neonCyan transition-colors">Console Top ↑</a>
+                <a href="https://www.linkedin.com/in/sifen-beshada-483254335/" target="_blank"
+                    class="hover:text-neonCyan transition-colors">LinkedIn</a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts section -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS animation library
+        // Initialize AOS animations
         AOS.init({
             duration: 1000,
             once: true
         });
 
+        // Hamburger Menu Controls
         const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
+        const menu = document.getElementById("menu");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            // Toggle hamburger cross symbol styles
+            const lines = menuToggle.querySelectorAll("span");
+            lines[0].classList.toggle("rotate-45");
+            lines[0].classList.toggle("translate-y-2");
+            lines[1].classList.toggle("opacity-0");
+            lines[2].classList.toggle("-rotate-45");
+            lines[2].classList.toggle("-translate-y-2");
+        });
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Close mobile dropdown when a link is clicked
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+                const lines = menuToggle.querySelectorAll("span");
+                lines[0].classList.remove("rotate-45", "translate-y-2");
+                lines[1].classList.remove("opacity-0");
+                lines[2].classList.remove("-rotate-45", "-translate-y-2");
             });
         });
 
-        // Add active class to navigation links on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
-                    navLinks.forEach(link => {
-                        if (link.getAttribute('href') === '#' + section.getAttribute('id')) {
-                            link.classList.add('gradient-text');
-                        } else {
-                            link.classList.remove('gradient-text');
-                        }
-                    });
+        // Dynamic console role typer
+        const roles = [
+            "Full-Stack Developer",
+            "Mobile Application Developer",
+            "AI & Computer Vision Engineer"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const targetElement = document.getElementById("typed-role");
+
+        function typeRole() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                targetElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                targetElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                // Pause at the full string
+                typeSpeed = 2200;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeRole, typeSpeed);
+        }
+
+        // Trigger typing text cycle
+        typeRole();
+
+        // Fully functional CLI Interactive Shell Terminal Logic
+        const termInput = document.getElementById("term-input");
+        const termBody = document.getElementById("term-body");
+
+        // Commands definition
+        const commands = {
+            help: `Available Shell Commands:
+- 'help'     : Lists all custom dev queries
+- 'skills'   : Prints Sifen's active monospaced tech matrix
+- 'projects' : Explains the 3 featured architectures (EthioCal, Admin Portal, NLP Matcher)
+- 'about'    : Outputs a brief professional narrative
+- 'contact'  : Returns emails, linkedins, and clip actions
+- 'clear'    : Resets the shell interface`,
+
+            about: `Profile Narrative // Sifen Beshada:
+I am an advanced Systems Developer focused on integrating artificial intelligence models (such as YOLO instance segmentation and NLP rankers) with robust full-stack software and modular cross-platform Flutter systems. Having validated multiple complete architectures, I prioritize delivering secure, performant, and type-safe systems at scale.`,
+
+            contact: `Connect console:
+- Email   : sifenbeshada613@gmail.com
+- LinkedIn: https://www.linkedin.com/in/sifen-beshada-483254335/
+- GitHub  : https://github.com/Adlucem2214`,
+
+            projects: `Featured Architectures Archive:
+1. ETHIOCAL      - Localized health tracker with YOLOv8 3D nutritional estimation.
+2. ETHIOCAL-CN   - React administrative clinical threshold & bilingual console.
+3. NLP-MATCHER   - React + FastAPI matching parser using SBERT semantic embeddings.`,
+
+            skills: `Sifen Beshada Stacks Grid:
++-------------------+-----------------------------------------+
+| Stack Category    | Technologies                            |
++-------------------+-----------------------------------------+
+| Backend & Systems | Spring Boot, Python, TypeScript, Node.js|
+| Frontend & Apps   | React, Angular, Flutter, Tailwind, HTML5|
+| AI & Vision Models| YOLOv8 Segmentations, SBERT, NLP Matcher|
++-------------------+-----------------------------------------+`
+        };
+
+        termInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const cmd = termInput.value.trim().toLowerCase();
+                termInput.value = "";
+
+                // Add prompt to output
+                const promptDiv = document.createElement("div");
+                promptDiv.className = "terminal-prompt-row mt-4";
+                promptDiv.innerHTML = `<span class="text-[#4ade80]">sifen@resumeshell:~$</span> <span class="text-white">${cmd}</span>`;
+                termBody.appendChild(promptDiv);
+
+                // Handle commands
+                const outputDiv = document.createElement("div");
+                outputDiv.className = "terminal-output mt-2";
+
+                if (cmd === "clear") {
+                    termBody.innerHTML = `<div class="terminal-output text-[#4ade80]">Terminal screen cleared. Type 'help' for options.</div>`;
+                    return;
+                } else if (commands[cmd]) {
+                    outputDiv.textContent = commands[cmd];
+                    outputDiv.className += " text-[#4ade80]";
+                } else if (cmd === "") {
+                    // Empty input
+                    return;
+                } else {
+                    outputDiv.textContent = `Command '${cmd}' not recognized. Type 'help' to review standard queries.`;
+                    outputDiv.className += " text-red-400";
                 }
-            });
+
+                termBody.appendChild(outputDiv);
+
+                // Scroll console down automatically
+                termBody.scrollTop = termBody.scrollHeight;
+            }
         });
     </script>
 </body>
+
 </html>
-
-
-
